@@ -6,7 +6,7 @@ Para compreender onde estamos hoje, precisamos olhar para o passado e analisar c
 
 O cérebro humano é uma máquina altamente poderosa e complexa capaz de processar uma grande quantidade de informações em tempo mínimo. As unidades principais do cérebro são os neurônios e é por meio deles que as informações são transmitidas e processadas. As tarefas realizadas pelo cérebro intrigam os pesquisadores, como por exemplo, a capacidade do cérebro de reconhecer um rosto familiar dentre uma multidão em apenas milésimos de segundo. As respostas sobre alguns enigmas do funcionamento do cérebro ainda não foram respondidas e se perpetuam ate os dias de hoje. O que é conhecido sobre o funcionamento do cérebro é que o mesmo desenvolve suas regras através da experiência adquirida em situações vividas anteriormente.
 
-![](../../deeplearnbook/img/cérebro-humano-300x240.jpg)
+![](../img/cérebro-humano-300x240.jpg)
 >A máquina mais fantástica do planeta terra.
 
 
