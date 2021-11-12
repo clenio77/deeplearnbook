@@ -1,4 +1,5 @@
 # Capítulo 2 - DeepLearBook
+![](../img/cap-1.jpg)
 
 ## Uma Breve História das Redes Neurais Artificiais
 
@@ -58,4 +59,4 @@ Meados dos anos 2000: o termo “aprendizagem profunda” começa a ganhar popul
 Em vez disso, demonstra que, dado um conjunto de dados suficientemente grande, processadores rápidos e um algoritmo suficientemente sofisticado, os computadores podem começar a realizar tarefas que até então só podiam ser realizadas apenas por seres humanos, como reconhecer imagens e voz, criar obras de arte ou tomar decisões por si mesmo. 
 Os estudos sobre as redes neurais sofreram uma grande revolução a partir dos anos 80 e esta área de estudos tem se destacado, seja pelas promissoras características apresentadas pelos modelos de redes neurais propostos, seja pelas condições tecnológicas atuais de implementação que permitem desenvolver arrojadas implementações de arquiteturas neurais paralelas em hardwares dedicado, obtendo assim ótimas performances destes sistemas (bastante superiores aos sistemas convencionais).
 
-- Para acessar o contéudo completo do livro, acesse: [deeplearningbook](https://www.deeplearningbook.com.br/)
+Para acessar o contéudo completo do livro, acesse: [deeplearningbook](https://www.deeplearningbook.com.br/)
