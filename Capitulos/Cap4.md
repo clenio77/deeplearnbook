@@ -1,4 +1,4 @@
-# Capítulo 2 - DeepLearBook
+# Capítulo 4 - DeepLearBook
 
 ![](../img/cap-1.jpg)
 

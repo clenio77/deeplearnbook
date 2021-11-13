@@ -1,4 +1,4 @@
-# Capítulo 2 - DeepLearBook
+# Capítulo 3 - DeepLearningBook
 ![](../img/cap-1.jpg)
 
 ## O Que São Redes Neurais Artificiais Profundas ou Deep Learning?

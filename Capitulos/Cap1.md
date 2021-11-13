@@ -1,4 +1,4 @@
-# Capítulo 1 - DeepLearnBook
+# Capítulo 1 - DeepLearningBook
 
 ![](../img/cap-1.jpg)
 

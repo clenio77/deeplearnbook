@@ -1,4 +1,4 @@
-# Capítulo 2 - DeepLearBook
+# Capítulo 2 - DeepLearningBook
 ![](../img/cap-1.jpg)
 
 ## Uma Breve História das Redes Neurais Artificiais
