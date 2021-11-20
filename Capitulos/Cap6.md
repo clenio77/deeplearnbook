@@ -1,4 +1,4 @@
-# Capítulo 5 - DeepLearnBook
+# Capítulo 6 - DeepLearnBook
 
 ![](../img/cap-1.jpg)
 
