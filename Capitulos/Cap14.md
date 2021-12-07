@@ -86,3 +86,70 @@ O exemplo acima só tem nove caminhos, mas seria fácil o número de caminhos cr
 
 A diferenciação do modo de avanço inicia em uma entrada para o grafo e se move em direção ao final. Em cada nó, soma todos os caminhos que se alimentam. Cada um desses caminhos representa uma maneira na qual a entrada afeta esse nó. Ao adicioná-los, obtemos a maneira total em que o nó é afetado pela entrada, isso é a derivada.
 
+![](../img/chain-forward-greek-1024x345.png)
+
+Embora você provavelmente não tenha pensado nisso em termos de grafos, a diferenciação no modo de avanço é muito parecida com o que você aprendeu implicitamente caso tenha feito alguma introdução a Cálculo.
+
+A diferenciação no modo reverso, por outro lado, começa na saída do grafo e se move em direção ao início (ou seja, se retropropaga ou backpropagation). Em cada nó, ele mescla todos os caminhos originados nesse nó.
+
+![](../img/chain-backward-greek-1024x356.png)
+
+A diferenciação do modo de avanço rastreia como uma entrada afeta todos os nós. A diferenciação no modo reverso rastreia como cada nó afeta uma saída. Ou seja, a diferenciação de modo de avanço aplica o operador ∂/∂X a cada nó, enquanto a diferenciação de modo reverso aplica o operador ∂Z/∂ a cada nó. Se isso parece o conceito de programação dinâmica, é porque é exatamente isso! (acesse um material sobre programação dinâmica nas referências ao final do capítulo)
+
+Nesse ponto, você pode se perguntar porque alguém se importaria com a diferenciação no modo reverso. Parece uma maneira estranha de fazer a mesma coisa que o modo de avanço. Existe alguma vantagem? Vamos considerar nosso exemplo original novamente:
+
+![](../img/tree-eval-derivs%20(1).png)
+
+Podemos usar a diferenciação de modo de avanço de **b** para cima. Isso nos dá a derivada de cada nó em relação a **b**.
+
+![](../img/tree-forwradmode.png)
+
+Nós calculamos **∂e/∂b**, a derivada de nossa saída em relação a um de nossos inputs. E se fizermos a diferenciação de modo reverso de **e** para baixo? Isso nos dá a derivada de **e** em relação a todos os nós:
+
+![](../img/tree-backprop.png)
+
+Quando digo que a diferenciação no modo reverso nos dá a derivada de e em relação a cada nó, eu realmente quero dizer cada nó. Temos tanto ∂e/∂a quanto ∂e/∂b, as derivadas de e em relação a ambas as entradas. A diferenciação no modo de avanço nos deu a derivada de nossa saída em relação a uma única entrada, mas a diferenciação no modo reverso nos dá todos eles.
+
+Para este grafo, isso é apenas um fator de duas velocidades, mas imagine uma função com um milhão de entradas e uma saída. A diferenciação no modo de avanço exigiria que passássemos pelo grafo um milhão de vezes para obter as derivadas. Diferenciação no modo reverso pode fazer isso em uma só passada! Uma aceleração de um fator de um milhão é bem legal e explica porque conseguimos treinar um modelo de rede neural profunda em tempo razoável.
+
+Ao treinar redes neurais, pensamos no custo (um valor que descreve o quanto uma rede neural é ruim) em função dos parâmetros (números que descrevem como a rede se comporta). Queremos calcular as derivadas do custo em relação a todos os parâmetros, para uso em descida do gradiente. Entretanto, muitas vezes, há milhões ou até dezenas de milhões de parâmetros em uma rede neural. Então, a diferenciação no modo reverso, chamada de backpropagation no contexto das redes neurais, nos dá uma velocidade enorme!
+
+Existem casos em que a diferenciação de modo de avanço faz mais sentido? Sim, existem! Onde o modo reverso fornece as derivadas de uma saída em relação a todas as entradas, o modo de avanço nos dá as derivadas de todas as saídas em relação a uma entrada. Se tiver uma função com muitas saídas, a diferenciação no modo de avanço pode ser muito, muito mais rápida.
+
+<h3>Agora faz sentido?</h3>
+
+Quando aprendemos pela primeira vez o que é backpropagation, a reação é: “Oh, essa é apenas a regra da cadeia (chain rule)! Como demoramos tanto tempo para descobrir?”
+
+Na época em que o backpropagation foi inventado, as pessoas não estavam muito focadas nas redes neurais feedforward. Também não era óbvio que as derivadas eram o caminho certo para treiná-las. Esses são apenas óbvios quando você percebe que pode calcular rapidamente derivadas. Houve uma dependência circular.
+
+Treinar redes neurais com derivadas? Certamente você ficaria preso em mínimos locais. E obviamente seria caro computar todas essas derivadas. O fato é que só porque sabemos que essa abordagem funciona é que não começamos imediatamente a listar os motivos que provavelmente não funcionaria. Já sabemos que funciona, mas novas abordagens vem sendo propostas no avanço das pesquisas em Deep Learning e Inteligência Artificial.
+
+ <h3>Conclusão da Parte 1</h3>
+
+ O backpropagation também é útil para entender como as derivadas fluem através de um modelo. Isso pode ser extremamente útil no raciocínio sobre porque alguns modelos são difíceis de otimizar. O exemplo clássico disso é o problema do desaparecimento de gradientes em redes neurais recorrentes, que discutiremos mais diante neste livro.
+
+Por fim, há uma lição algorítmica ampla a ser retirada dessas técnicas. Backpropagation e forward-mode differentiation usam um poderoso par de truques (linearização e programação dinâmica) para computar derivadas de forma mais eficiente do que se poderia imaginar. Se você realmente entende essas técnicas, pode usá-las para calcular com eficiência várias outras expressões interessantes envolvendo derivadas.
+
+Mas este capítulo teve como objetivo apenas ajudá-lo a compreender o algoritmo, já que praticamente não existe documentação sobre isso em português. Falta ainda compreender como o backpropagation é aplicado no treinamento das redes neurais. Ansioso por isso? Então acompanhe o próximo capítulo!
+
+_**Referências:**_
+
+[Formação Inteligência Artificial](https://www.datascienceacademy.com.br/pages/formacao-inteligencia-artificial)
+
+[Me Salva! Cálculo – O que é uma derivada?](https://www.youtube.com/watch?v=CQxb5ZXeY3E)
+
+[The Birth Of Graph Theory: Leonhard Euler And The Königsberg Bridge Problem](https://www.encyclopedia.com/science/encyclopedias-almanacs-transcripts-and-maps/birth-graph-theory-leonhard-euler-and-konigsberg-bridge-problem)
+
+[Learning representations by back-propagating errors](https://www.nature.com/articles/323533a0)
+
+[Chain Rule](https://en.wikipedia.org/wiki/Chain_rule)
+
+[Calculus on Computational Graphs: Backpropagation](https://colah.github.io/posts/2015-08-Backprop/)
+
+[How the backpropagation algorithm works](http://neuralnetworksanddeeplearning.com/chap2.html)
+
+[Dynamic programming](https://en.wikipedia.org/wiki/Dynamic_programming)
+
+Nota: parte das imagens usadas neste capítulo foram extraídas no excelente post (citado nas referências acima) de [Christopher Olah](https://colah.github.io/about.html), pesquisador de Machine Learning do Google Brain, e com a devida autorização do autor.
+
+Para acessar o contéudo completo do livro, acesse: [deeplearningbook](https://www.deeplearningbook.com.br/)   :smiley:
